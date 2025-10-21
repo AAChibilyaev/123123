@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "default",
+  "rsc": true,
+  "tsx": true,
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "registries": {
+    "@official": "https://ui.shadcn.com/registry/{name}.json",
+    "@originui": "https://originui.com/registry/{name}.json",
+    "@shadcnblocks": "https://shadcnblocks.com/registry/{name}.json",
+    "@awesome": {
+      "url": "https://awesome-shadcn.com/registry/{name}.json",
+      "params": { "version": "2025" }
+    },
+    "@company": {
+      "url": "https://registry.company.com/resources/{name}.json",
+      "headers": { "Authorization": "Bearer ${REGISTRY_TOKEN}" }
+    }
+  }
+}

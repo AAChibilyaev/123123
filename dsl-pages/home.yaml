@@ -1,0 +1,30 @@
+page: home
+route: /
+layout: marketing
+ppr: { dynamic: 'force-static' }
+seo: { title: "@i18n.home.seo.title", description: "@i18n.home.seo.desc" }
+blocks:
+  - use: "@official/hero"
+    variant: centered
+    props:
+      eyebrow: "@i18n.home.hero.eyebrow"
+      title: "@i18n.home.hero.title"
+      subtitle: "@i18n.home.hero.subtitle"
+      cta: { label: "@i18n.cta.getStarted", href: "/signup" }
+      loading: { component: "@official/spinner", size: "md" }
+  - use: "@originui/feature-list"
+    props:
+      items:
+        - { icon: bolt, title: "@i18n.features.fast", desc: "@i18n.features.fast_desc", ai_prompt: "Translate casually for tech audience using OpenAI o1-preview" }
+        - { icon: shield, title: "@i18n.features.secure", desc: "@i18n.features.secure_desc" }
+  - use: "@shadcnblocks/data-table"
+    props:
+      columns: ["Name", "Version", "Status"]
+      dataKey: "packages"
+  - use: "@official/button-group"
+    props:
+      buttons: [
+        { label: "@i18n.actions.save", variant: "default" },
+        { label: "@i18n.actions.cancel", variant: "outline" }
+      ]
+localeScope: ["en","ru"]

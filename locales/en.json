@@ -1,0 +1,18 @@
+{
+  "home": {
+    "seo": { "title": "Home", "desc": "Welcome to our site" },
+    "hero": { "eyebrow": "Featured", "title": "Welcome", "subtitle": "Discover more" }
+  },
+  "features": {
+    "fast": "Fast",
+    "fast_desc": "High performance",
+    "secure": "Secure",
+    "secure_desc": "Safe and reliable"
+  },
+  "docs": {
+    "overview": { "title": "Documentation", "desc": "Everything you need" },
+    "hero": { "title": "API & Guides", "subtitle": "Start with the basics" }
+  },
+  "cta": { "getStarted": "Get Started", "readDocs": "Read the docs" },
+  "actions": { "save": "Save", "cancel": "Cancel" }
+}
