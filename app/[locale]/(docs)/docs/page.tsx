@@ -8,10 +8,16 @@ export const dynamic = "force-static";
 
 export default async function Page() {
   const t = await getTranslations();
+  const heroProps = {
+    title: t("docs.hero.title"),
+    subtitle: t("docs.hero.subtitle"),
+    cta: { label: t("cta.readDocs"), href: "/docs/getting-started" }
+  };
+  const dataTableProps = { columns: ["Name", "Version", "Status"], dataKey: "packages" };
   return (
     <>
-      <Hero {...{"title":{t("docs.hero.title")},"subtitle":{t("docs.hero.subtitle")},"cta":{"label":{t("cta.readDocs")},"href":"/docs/getting-started"}}} />
-      <DataTable {...{"columns":["Name","Version","Status"],"dataKey":"packages"}} />
+      <Hero {...heroProps} />
+      <DataTable {...dataTableProps} />
     </>
   );
 }

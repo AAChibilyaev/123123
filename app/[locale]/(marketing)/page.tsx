@@ -11,15 +11,40 @@ export const dynamic = "force-static";
 
 export default async function Page() {
   const t = await getTranslations();
+  const heroProps = {
+    eyebrow: t("home.hero.eyebrow"),
+    title: t("home.hero.title"),
+    subtitle: t("home.hero.subtitle"),
+    cta: { label: t("cta.getStarted"), href: "/signup" }
+  };
+  const spinnerLoadingProps = { size: "md" };
+  const featureListProps = {
+    items: [
+      {
+        icon: "bolt",
+        title: t("features.fast"),
+        desc: t("features.fast_desc"),
+        ai_prompt: "Translate casually for tech audience using OpenAI o1-preview"
+      },
+      { icon: "shield", title: t("features.secure"), desc: t("features.secure_desc") }
+    ]
+  };
+  const dataTableProps = { columns: ["Name", "Version", "Status"], dataKey: "packages" };
+  const buttonGroupProps = {
+    buttons: [
+      { label: t("actions.save"), variant: "default" },
+      { label: t("actions.cancel"), variant: "outline" }
+    ]
+  };
   return (
     <>
       {/* with loading fallback */}
-      <Hero variant="centered" {...{"eyebrow":{t("home.hero.eyebrow")},"title":{t("home.hero.title")},"subtitle":{t("home.hero.subtitle")},"cta":{"label":{t("cta.getStarted")},"href":"/signup"}}}>
-        <Spinner {...{"size":"md"}} />
+      <Hero variant="centered" {...heroProps}>
+        <Spinner {...spinnerLoadingProps} />
       </Hero>
-      <FeatureList {...{"items":[{"icon":"bolt","title":{t("features.fast")},"desc":{t("features.fast_desc")},"ai_prompt":"Translate casually for tech audience using OpenAI o1-preview"},{"icon":"shield","title":{t("features.secure")},"desc":{t("features.secure_desc")}}]}} />
-      <DataTable {...{"columns":["Name","Version","Status"],"dataKey":"packages"}} />
-      <ButtonGroup {...{"buttons":[{"label":{t("actions.save")},"variant":"default"},{"label":{t("actions.cancel")},"variant":"outline"}]}} />
+      <FeatureList {...featureListProps} />
+      <DataTable {...dataTableProps} />
+      <ButtonGroup {...buttonGroupProps} />
     </>
   );
 }

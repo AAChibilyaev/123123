@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "apg:generate": "tsx scripts/apg-generate.ts dsl-pages",
+    "apg:agent": "tsx scripts/apg-agent.ts",
     "apg:extract": "tsx scripts/i18n-extract.ts dsl-pages",
     "mcp:start": "npx shadcn@latest mcp",
     "lh:ci": "lhci autorun --collect.url=http://localhost:3000 --assert.preset=lighthouse:recommended"
