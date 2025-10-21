@@ -1,0 +1,17 @@
+page: docs-overview
+route: /docs
+layout: docs
+seo:
+  title: "@i18n.docs.overview.title"
+  description: "@i18n.docs.overview.desc"
+blocks:
+  - use: "@official/hero"
+    props:
+      title: "@i18n.docs.hero.title"
+      subtitle: "@i18n.docs.hero.subtitle"
+      cta: { label: "@i18n.cta.readDocs", href: "/docs/getting-started" }
+  - use: "@shadcnblocks/data-table"
+    props:
+      columns: ["Name","Version","Status"]
+      dataKey: "packages"
+localeScope: ["en","ru"]
